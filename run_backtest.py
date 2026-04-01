@@ -3,6 +3,8 @@
 from backtester.data_loader import load_prices
 from backtester.engine import Backtester
 from backtester.strategy import BuyAndHoldStrategy
+from backtester.strategies.macd_strategy import MACDStrategy
+from backtester.strategies.ma_crossover_strategy import MACrossoverStrategy
 from backtester.dashboard import generate_dashboard
 
 
@@ -13,7 +15,8 @@ def main():
     # Define strategies to backtest
     strategies = [
         BuyAndHoldStrategy(name="Buy & Hold S&P 500", assets=["S&P 500"]),
-        # Add more strategies here as they are built
+        MACDStrategy(name="MACD Crossover (S&P 500)", assets=["S&P 500"]),
+        MACrossoverStrategy(name="MA Crossover 20/50 (S&P 500)", assets=["S&P 500"]),
     ]
 
     # Run each strategy
