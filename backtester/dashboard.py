@@ -31,7 +31,7 @@ def generate_dashboard(
     output_path: str = "dashboard.html",
 ) -> None:
     """Build and save a standalone interactive HTML dashboard."""
-    include_js = "cdn"  # First chart loads Plotly JS from CDN
+    include_js = True  # Bundle Plotly JS inline so it works offline
 
     sections = []
     sections.append(_html_header())
